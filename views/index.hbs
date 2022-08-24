@@ -28,7 +28,7 @@
                         <a class="nav-link text-dark" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/project">Add Project</a>
+                        <a class="nav-link text-dark" href="/add-project">Add Project</a>
                     </li>
                 </ul>
                 <a href="/form">
@@ -84,116 +84,43 @@
         </div>
     </div>
 
-    {{!-- <div class="container-fluid bg-light mt-5">
+    <div class="container-fluid bg-light mt-5">
         <h1 class="text-center p-5">My Project</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
-            <div class="col">
-                <div class="card">
-                    <img src="assets/img/image-1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Dumbways Mobile App-2021</h5>
-                        <p>durasi: 3 bulan</p>
-                        <p class="card-text ms-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
-                            aliquid tempore et animi autem maiores minima similique facilis perferendis quia sed, enim
-                            assumenda architecto mollitia, esse ipsa unde voluptatum!</p>
-                        <div class="h2 mb-3">
-                            <span class="ms-1"><i class="fa-brands fa-google-play"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-android"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-java"></i></span>
-                        </div>
-                        <div class="d-flex ">
-                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">Edit</button>
-                            <button class="btn p-2 w-100 bg-dark text-light" type="button">Delet</button>
-                          </div>
-                    </div>
-                </div>
-            </div>
+            {{#each myProject}}
             <div class="col">
                 <div class="card">
                     <img src="assets/img/image-2.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Dumbways Mobile App-2021</h5>
-                        <p>durasi: 3 bulan</p>
-                        <p class="card-text ms-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
-                            aliquid tempore et animi autem maiores minima similique facilis perferendis quia sed, enim
-                            assumenda architecto mollitia, esse ipsa unde voluptatum!</p>
+                        <h5 class="card-title"><a href="/detail-project/{{@index}}" class="text-decoration-none text-dark">{{this.name}}</a></h5>
+                        <p>duration:</p>
+                        <p>{{this.startDate}} - {{this.endDate}} ({{this.duration}})</p>
+                        <p class="card-text ms-1">{{this.message}}</p>
+                        <h6 class="card-title">Technologies:</h6>
                         <div class="h2 mb-3">
-                            <span class="ms-1"><i class="fa-brands fa-google-play"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-android"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-java"></i></span>
+                            
+                            <span class="ms-1">
+                            <i class="fa-brands fa-{{this.check1}}"></i>
+                            <i class="fa-brands fa-{{this.check2}}"></i>
+                            <i class="fa-brands fa-{{this.check3}}"></i>
+                            <i class="fa-brands fa-{{this.check4}}"></i>
+                            </span>
+                            
                         </div>
                         <div class="d-flex ">
-                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">Edit</button>
-                            <button class="btn p-2 w-100 bg-dark text-light" type="button">Delet</button>
+                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">
+                             <a href="/edit-project/{{@index}}" class="text-decoration-none text-light">Edit</a>   
+                                </button>
+                            <button class="btn p-2 w-100 bg-dark text-light" type="button">
+                                <a href="/delete-project/{{@index}}" class="text-decoration-none text-light">delete</a>
+                            </button>
                           </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="assets/img/image-3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Dumbways Mobile App-2021</h5>
-                        <p>durasi: 3 bulan</p>
-                        <p class="card-text ms-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
-                            aliquid tempore et animi autem maiores minima similique facilis perferendis quia sed, enim
-                            assumenda architecto mollitia, esse ipsa unde voluptatum!</p>
-                        <div class="h2 mb-3">
-                            <span class="ms-1"><i class="fa-brands fa-google-play"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-android"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-java"></i></span>
-                        </div>
-                        <div class="d-flex ">
-                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">Edit</button>
-                            <button class="btn p-2 w-100 bg-dark text-light" type="button">Delet</button>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="assets/img/image-4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Dumbways Mobile App-2021</h5>
-                        <p>durasi: 3 bulan</p>
-                        <p class="card-text ms-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
-                            aliquid tempore et animi autem maiores minima similique facilis perferendis quia sed, enim
-                            assumenda architecto mollitia, esse ipsa unde voluptatum!</p>
-                        <div class="h2 mb-3">
-                            <span class="ms-1"><i class="fa-brands fa-google-play"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-android"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-java"></i></span>
-                        </div>
-                        <div class="d-flex ">
-                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">Edit</button>
-                            <button class="btn p-2 w-100 bg-dark text-light" type="button">Delet</button>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="assets/img/image-5.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Dumbways Mobile App-2021</h5>
-                        <p>durasi: 3 bulan</p>
-                        <p class="card-text ms-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
-                            aliquid tempore et animi autem maiores minima similique facilis perferendis quia sed, enim
-                            assumenda architecto mollitia, esse ipsa unde voluptatum!</p>
-                        <div class="h2 mb-3">
-                            <span class="ms-1"><i class="fa-brands fa-google-play"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-android"></i></span>
-                            <span class="ms-1"><i class="fa-brands fa-java"></i></span>
-                        </div>
-                        <div class="d-flex ">
-                            <button class="btn p-2 w-100 me-2 bg-dark text-light" type="button">Edit</button>
-                            <button class="btn p-2 w-100 bg-dark text-light" type="button">Delet</button>
-                          </div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
-    </div> --}}
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

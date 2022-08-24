@@ -19,7 +19,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">{{desc.name}}</span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -27,7 +27,7 @@
                         <a class="nav-link text-dark" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/project">Add Project</a>
+                        <a class="nav-link text-dark" href="/add-project">Add Project</a>
                     </li>
                 </ul>
                 <a href="/form">
@@ -37,19 +37,19 @@
     </nav>
     <h1 class="text-center mt-5">EDIT MY PROJECT</h1>
 
-    <div class="container">
-    <form class="row" action="/edit-project/{{index}}" method="post">
+    <div class="container" style="width: 40rem;">
+    <form class="row" method="post" action="/edit-project/{{index}}">
         <div class="mb-3">
             <label for="InputName" class="form-label">Project Name</label>
             <input type="text" class="form-control" id="InputName" name="inputName" value="{{project.name}}">
-          </div> 
+          </div>
         <div class="col mb-3">
           <label for="inputStartDate" class="form-label">Start Date</label>
-          <input type="date" class="form-control" id="inputStartDate" name="inputStartDate" placeholder="{{project.startCalender}}">
+          <input type="date" class="form-control" id="inputStartDate" name="inputStartDate" value="{{project.startDate}}">
         </div>
         <div class="col mb-3">
           <label for="inputEndDate" class="form-label">End Date</label>
-          <input type="date" class="form-control" id="inputEndDate" name="inputEndDate" placeholder="{{project.endCalender}}">
+          <input type="date" class="form-control" id="inputEndDate" name="inputEndDate" value="{{project.endDate}}">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -58,21 +58,21 @@
         <p>Technologies</p>
         <div class="d-flex">
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check1" value="fa-square-js">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check1" value="square-js">
             <label class="form-check-label" for="exampleCheck1" style="margin-right: 50px;">JavaScript</label>
           </div>
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck2" name="check2" value="fa-react">
+            <input type="checkbox" class="form-check-input" id="exampleCheck2" name="check2" value="react">
             <label class="form-check-label" for="exampleCheck2">React</label>
           </div>
         </div>
         <div class="d-flex">
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck3" name="check3" value="fa-node-js">
+            <input type="checkbox" class="form-check-input" id="exampleCheck3" name="check3" value="node-js">
             <label class="form-check-label" for="exampleCheck3" style="margin-right: 62px;">Node JS</label>
           </div>
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck" name="check4" value="fa-docker">
+            <input type="checkbox" class="form-check-input" id="exampleCheck" name="check4" value="docker">
             <label class="form-check-label" for="exampleCheck">Docker</label>
           </div>
         </div>
